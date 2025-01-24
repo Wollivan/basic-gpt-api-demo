@@ -5,7 +5,6 @@ const user = "1";
 const temperature = 0.5;
 const frequencyPenalty = 0.0;
 const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-console.log(apiKey);
 
 async function chatReq(event) {
   event.preventDefault();
@@ -26,7 +25,7 @@ async function chatReq(event) {
     }),
   });
   const data = await response.json();
-  console.log(data);
+
   const responseP = document.createElement("p");
   responseP.textContent = data.choices[0].text;
   responsesDiv.appendChild(responseP);
